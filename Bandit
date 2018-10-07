@@ -10,10 +10,10 @@ namespace classPractice
     {
         public int HP, AC;
         public string Role;
-        public string[] MageSpells = new string[3] {"Force blast", "Strengthen", "Curse"}, 
-            FighterAbilities = new string[4] {"Slash", "Heavy slash", "Taunt", "Defensive stance"}, 
-            RogueAbilities = new string[4] {"Stab", "Hide", "Snipe", "Defensive stance"}, 
-            NoRoleAbilities = new string[2] {"Fist", "Defensive stance"};
+        public string[] MageSpells = new string[3] { "Force blast", "Strengthen", "Curse" },
+            FighterAbilities = new string[4] { "Slash", "Heavy slash", "Taunt", "Defensive stance" },
+            RogueAbilities = new string[4] { "Stab", "Hide", "Snipe", "Defensive stance" },
+            NoRoleAbilities = new string[2] { "Fist", "Defensive stance" };
         static int baseHP, baseAC;
 
         public Bandit(int Type)
