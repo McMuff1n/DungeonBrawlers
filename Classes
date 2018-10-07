@@ -9,15 +9,20 @@ namespace classPractice
 
     class Program
     {
-        public static Goblin Goblin1 = new Goblin(0); //Creates a new goblin of the type no role
         public static Bandit Bandit1 = new Bandit(1); //Creates a new bandit of the type fighter
-        static bool IsMage = false, IsFighter = false, IsRogue = false;
+        static bool IsMage = false, IsFighter = false, IsRogue = false, PlayerDeath = false;
         public static int PlayerHP, PlayerATK, PlayerAC;
 
         static void Main(string[] args)
         {
             Console.CursorVisible = false;
             ClassSelector();
+            if (IsFighter == true)
+                Combat(1); //Tells the combat method that the player is a fighter
+            else if (IsRogue == true)
+                Combat(2);
+            else if (IsMage == true)
+                Combat(3);
         }
 
         static void ClassSelector()
@@ -60,19 +65,56 @@ namespace classPractice
                     case 1:
                         IsFighter = true;
                         PlayerAC = 18;
-                        PlayerATK = 20;
                         PlayerHP = 100;
                         break;
                     case 2:
                         IsRogue = true;
+                        PlayerAC = 16;
+                        PlayerHP = 80;
                         break;
                     case 3:
                         IsMage = true;
+                        PlayerAC = 10;
+                        PlayerHP = 70;
                         break;
                 }
             }
         }
-        static void Combat()
+        static void Combat(int playerClass) 
+        {
+            Console.Clear();
+            Console.WriteLine("There is a bandit in front of you. \nHe seems hostile, what do you want to do? ");
+            while(Bandit1.HP > 0 && PlayerHP > 0)
+            {
+                switch(playerClass)
+                {
+                    case 1:
+                        PcFighterAction();
+                        break;
+                    case 2:
+                        PcRogueAction();
+                        break;
+                    case 3:
+                        PcMageAction();
+                        break;
+                }
+                EnemyAction();
+            }
+
+        }
+        static void PcFighterAction()
+        {
+
+        }
+        static void PcRogueAction()
+        {
+
+        }
+        static void PcMageAction()
+        {
+
+        }
+        static void EnemyAction()
         {
 
         }
